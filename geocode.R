@@ -4,7 +4,9 @@
 db = "~/Desktop/tmp_geocoordinates.sqlite"
 
 # Define a character vector you want to geolocate
-location_chars <- c("Chagcharan","Kabul","Sydney NSW")
+location_chars <- c("Chagcharan","Kabul","Sydney NSW","Moore's Law")
+# Sanitize SQL
+location_chars <- gsub("'","''",location_chars)
 
 # Functions
 # Geocode a string with Google Maps
