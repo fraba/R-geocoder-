@@ -34,7 +34,7 @@ updateDb <- function(db, df, status) {
   now <- Sys.time()
   con <- dbConnect(RSQLite::SQLite(), dbname = db)
   query <- dbSendQuery(con, paste0(
-    "UPDATE geo_coordinate SET lon = ",df[,"lon"],", lat = ",df[,"lat"],", status = ", status,", timestamp = '",now,"' WHERE location_char = '",df[,"location"],"';"
+    "UPDATE geo_coordinate SET lon = '",df[,"lon"],"', lat = '",df[,"lat"],"', status = ", status,", timestamp = '",now,"' WHERE location_char = '",df[,"location"],"';"
   ))
   dbClearResult(dbListResults(con)[[1]])
   dbDisconnect(con)
