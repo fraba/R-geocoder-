@@ -1,5 +1,10 @@
 #!/usr/bin/Rscript
 
+# Required libraries
+require(ggmap)
+require(DBI)
+require(RSQLite)
+
 # Define variables
 db = "~/Desktop/tmp_geocoordinates.sqlite"
 
